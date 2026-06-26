@@ -299,7 +299,9 @@ p{
     background:rgba(12,28,44,.82);
 
 }
-
+.header-apple{
+    transition: transform .35s ease;
+}
 /* ===========================
    LOGO
 =========================== */
@@ -402,11 +404,11 @@ p{
 
     top:0;
 
-    right:-360px;
+    right:-350px;
 
-    width:340px;
+    width:320px;
 
-    max-width:90vw;
+    max-width:900vw;
 
     height:100vh;
 
@@ -418,7 +420,7 @@ p{
 
     box-shadow:-10px 0 35px rgba(0,0,0,.45);
 
-    z-index:9998;
+    z-index:99999;
 
 }
 
