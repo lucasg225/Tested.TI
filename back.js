@@ -170,3 +170,25 @@ if (ano) {
 }
 
 console.log("Projeto TI V5 carregado com sucesso.");
+
+/* ===========================
+   HEADER INTELIGENTE
+=========================== */
+
+let ultimoScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const atual = window.pageYOffset;
+
+    if (atual > ultimoScroll && atual > 100) {
+        // Descendo a página
+        header.style.transform = "translateY(-100%)";
+    } else {
+        // Subindo a página
+        header.style.transform = "translateY(0)";
+    }
+
+    ultimoScroll = atual;
+
+});
