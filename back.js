@@ -332,3 +332,158 @@ btnAnterior.addEventListener("click",()=>{
 });
 
 atualizarPergunta();
+/* ==========================================================
+   RESULTADO DO SIMULADOR
+==========================================================*/
+
+function mostrarResultado(){
+
+    const resultado = document.getElementById("resultadoCarreira");
+
+    let melhorArea = "";
+    let maiorPontuacao = -1;
+
+    for(const area in pontos){
+
+        if(pontos[area] > maiorPontuacao){
+
+            maiorPontuacao = pontos[area];
+            melhorArea = area;
+
+        }
+
+    }
+
+    const carreiras = {
+
+        dev:{
+            emoji:"💻",
+            nome:"Desenvolvedor Full Stack",
+            salario:"R$ 6.000 a R$ 15.000",
+            descricao:"Você gosta de criar sistemas, sites e aplicativos. Seu perfil é criativo e voltado para resolver problemas através da programação.",
+            tecnologias:"HTML • CSS • JavaScript • React • Node.js • SQL",
+            certificacoes:"Oracle • Microsoft • AWS"
+        },
+
+        redes:{
+            emoji:"🌐",
+            nome:"Analista de Redes",
+            salario:"R$ 4.500 a R$ 10.000",
+            descricao:"Você possui perfil para infraestrutura, redes corporativas e servidores.",
+            tecnologias:"Cisco • Mikrotik • Linux • Windows Server",
+            certificacoes:"CCNA • Fortinet"
+        },
+
+        hardware:{
+            emoji:"🛠️",
+            nome:"Especialista em Hardware",
+            salario:"R$ 3.000 a R$ 8.000",
+            descricao:"Você gosta de manutenção, montagem e diagnóstico de computadores.",
+            tecnologias:"Eletrônica • Redes • Manutenção",
+            certificacoes:"CompTIA A+"
+        },
+
+        seguranca:{
+            emoji:"🔒",
+            nome:"Especialista em Segurança",
+            salario:"R$ 8.000 a R$ 18.000",
+            descricao:"Você possui perfil para proteger sistemas e combater ataques virtuais.",
+            tecnologias:"Linux • Firewall • Pentest",
+            certificacoes:"Security+ • CEH"
+        },
+
+        cloud:{
+            emoji:"☁️",
+            nome:"Engenheiro Cloud",
+            salario:"R$ 9.000 a R$ 20.000",
+            descricao:"Você demonstra interesse por computação em nuvem e infraestrutura moderna.",
+            tecnologias:"AWS • Azure • Docker • Kubernetes",
+            certificacoes:"AWS Cloud Practitioner"
+        },
+
+        dados:{
+            emoji:"📊",
+            nome:"Cientista de Dados",
+            salario:"R$ 8.000 a R$ 18.000",
+            descricao:"Você gosta de analisar dados e gerar informações para tomadas de decisão.",
+            tecnologias:"Python • SQL • Power BI",
+            certificacoes:"Google Data Analytics"
+        },
+
+        ia:{
+            emoji:"🤖",
+            nome:"Engenheiro de Inteligência Artificial",
+            salario:"R$ 10.000 a R$ 25.000",
+            descricao:"Você possui perfil para desenvolver soluções utilizando Inteligência Artificial.",
+            tecnologias:"Python • TensorFlow • Machine Learning",
+            certificacoes:"Microsoft AI Engineer"
+        }
+
+    };
+
+    const carreira = carreiras[melhorArea];
+
+    resultado.style.display = "block";
+
+    resultado.innerHTML = `
+
+        <h2>${carreira.emoji} ${carreira.nome}</h2>
+
+        <p>${carreira.descricao}</p>
+
+        <br>
+
+        <p><strong>💰 Salário Médio:</strong> ${carreira.salario}</p>
+
+        <p><strong>🛠 Tecnologias:</strong> ${carreira.tecnologias}</p>
+
+        <p><strong>🎓 Certificações:</strong> ${carreira.certificacoes}</p>
+
+        <br>
+
+        <h3>Ranking das Áreas</h3>
+
+        <div class="ranking">
+
+            ${Object.keys(pontos).map(area=>{
+
+                const porcentagem=Math.round((pontos[area]/10)*100);
+
+                return `
+
+                <div class="ranking-item">
+
+                    <span>${area.toUpperCase()} ${porcentagem}%</span>
+
+                    <div class="barra-ranking">
+
+                        <div style="width:${porcentagem}%"></div>
+
+                    </div>
+
+                </div>
+
+                `;
+
+            }).join("")}
+
+        </div>
+
+        <br>
+
+        <button class="btn-principal"
+                onclick="location.reload()">
+
+            Refazer Simulador
+
+        </button>
+
+    `;
+
+    document.querySelector(".navegacaoQuiz").style.display="none";
+
+    resultado.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
