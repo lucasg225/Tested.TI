@@ -170,7 +170,7 @@ if (ano) {
 }
 
 console.log("Projeto TI V5 carregado com sucesso.");
-
+}
 /* ===========================
    HEADER INTELIGENTE
 =========================== */
