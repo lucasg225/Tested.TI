@@ -610,170 +610,296 @@
     </div>
 
 </section>
- <!-- ==========================================================
-     SIMULADOR DE CARREIRA
+ 
+<!-- ==========================================================
+     SIMULADOR DE CARREIRA EM TI
 ========================================================== -->
 
 <section class="secao fade" id="simulador">
 
-    <h2>Descubra sua Carreira na TI</h2>
+    <h2>Simulador de Carreira em TI</h2>
 
     <p class="texto-centro">
-
-        Responda às perguntas abaixo e descubra qual área da
-        Tecnologia da Informação combina mais com o seu perfil.
-
+        Descubra qual área da Tecnologia da Informação combina mais com seu perfil.
+        Responda às perguntas e veja o resultado ao final.
     </p>
 
-    <div class="simulador">
+    <div class="simulador-box">
 
-        <!-- Pergunta 1 -->
+        <!-- Barra de progresso -->
 
-        <div class="pergunta">
-
-            <h3>1. Qual atividade você mais gosta?</h3>
-
-            <label>
-
-                <input type="radio" name="p1" value="dev">
-
-                Programar sistemas
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p1" value="redes">
-
-                Configurar redes
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p1" value="hardware">
-
-                Montar computadores
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p1" value="seguranca">
-
-                Proteger sistemas
-
-            </label>
-
+        <div class="progresso">
+            <div id="barraProgresso"></div>
         </div>
 
-        <!-- Pergunta 2 -->
+        <p class="contador-pergunta">
+            Pergunta
+            <span id="numeroPergunta">1</span>
+            de 10
+        </p>
 
-        <div class="pergunta">
+        <!-- ====================== -->
+        <!-- PERGUNTA 1 -->
+        <!-- ====================== -->
 
-            <h3>2. Você gosta de matemática?</h3>
+        <div class="pergunta ativa">
 
-            <label>
+            <h3>Qual atividade mais combina com você?</h3>
 
-                <input type="radio" name="p2" value="sim">
+            <button class="opcao" data-area="dev">
+                💻 Criar sites e aplicativos
+            </button>
 
-                Sim
+            <button class="opcao" data-area="redes">
+                🌐 Configurar redes
+            </button>
 
-            </label>
+            <button class="opcao" data-area="hardware">
+                🛠️ Montar computadores
+            </button>
 
-            <label>
-
-                <input type="radio" name="p2" value="nao">
-
-                Não
-
-            </label>
-
-        </div>
-
-        <!-- Pergunta 3 -->
-
-        <div class="pergunta">
-
-            <h3>3. Você prefere trabalhar...</h3>
-
-            <label>
-
-                <input type="radio" name="p3" value="sozinho">
-
-                Sozinho
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p3" value="equipe">
-
-                Em equipe
-
-            </label>
-
-        </div>
-
-        <!-- Pergunta 4 -->
-
-        <div class="pergunta">
-
-            <h3>4. O que mais desperta seu interesse?</h3>
-
-            <label>
-
-                <input type="radio" name="p4" value="ia">
-
-                Inteligência Artificial
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p4" value="cloud">
-
-                Computação em Nuvem
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p4" value="dados">
-
-                Banco de Dados
-
-            </label>
-
-            <label>
-
-                <input type="radio" name="p4" value="hardware">
-
-                Equipamentos
-
-            </label>
-
-        </div>
-
-        <div class="hero-botoes">
-
-            <button
-                class="btn-principal"
-                onclick="descobrirCarreira()">
-
-                Descobrir Minha Área
-
+            <button class="opcao" data-area="seguranca">
+                🔒 Proteger sistemas
             </button>
 
         </div>
 
-        <div
-            id="resultadoCarreira"
-            class="resultado-carreira">
+        <!-- ====================== -->
+        <!-- PERGUNTA 2 -->
+        <!-- ====================== -->
+
+        <div class="pergunta">
+
+            <h3>Qual matéria você mais gosta?</h3>
+
+            <button class="opcao" data-area="dev">
+                Programação
+            </button>
+
+            <button class="opcao" data-area="dados">
+                Matemática
+            </button>
+
+            <button class="opcao" data-area="redes">
+                Redes
+            </button>
+
+            <button class="opcao" data-area="hardware">
+                Eletrônica
+            </button>
 
         </div>
 
-    </div>
+        <!-- ====================== -->
+        <!-- PERGUNTA 3 -->
+        <!-- ====================== -->
+
+        <div class="pergunta">
+
+            <h3>O que você faria primeiro em um computador novo?</h3>
+
+            <button class="opcao" data-area="hardware">
+                Instalar as peças
+            </button>
+
+            <button class="opcao" data-area="dev">
+                Desenvolver um programa
+            </button>
+
+            <button class="opcao" data-area="redes">
+                Configurar a internet
+            </button>
+
+            <button class="opcao" data-area="seguranca">
+                Instalar proteção
+            </button>
+
+        </div>
+
+        <!-- ====================== -->
+        <!-- PERGUNTA 4 -->
+        <!-- ====================== -->
+
+        <div class="pergunta">
+
+            <h3>Qual tecnologia você gostaria de aprender?</h3>
+
+            <button class="opcao" data-area="ia">
+                🤖 Inteligência Artificial
+            </button>
+
+            <button class="opcao" data-area="cloud">
+                ☁️ Computação em Nuvem
+            </button>
+
+            <button class="opcao" data-area="dados">
+                📊 Ciência de Dados
+            </button>
+
+            <button class="opcao" data-area="seguranca">
+                🔐 Segurança da Informação
+            </button>
+
+        </div>
+
+        <!-- ====================== -->
+        <!-- PERGUNTA 5 -->
+        <!-- ====================== -->
+
+        <div class="pergunta">
+
+            <h3>Você prefere trabalhar...</h3>
+
+            <button class="opcao" data-area="dev">
+                Criando sistemas
+            </button>
+
+            <button class="opcao" data-area="cloud">
+                Administrando servidores
+            </button>
+
+            <button class="opcao" data-area="redes">
+                Gerenciando redes
+            </button>
+
+            <button class="opcao" data-area="dados">
+                Analisando dados
+            </button>
+
+        </div>
+<!-- ====================== -->
+<!-- PERGUNTA 6 -->
+<!-- ====================== -->
+
+<div class="pergunta">
+
+    <h3>Você gosta de aprender novas tecnologias?</h3>
+
+    <button class="opcao" data-area="ia">Inteligência Artificial</button>
+
+    <button class="opcao" data-area="cloud">Cloud Computing</button>
+
+    <button class="opcao" data-area="seguranca">Segurança Digital</button>
+
+    <button class="opcao" data-area="dados">Ciência de Dados</button>
+
+</div>
+
+<!-- ====================== -->
+<!-- PERGUNTA 7 -->
+<!-- ====================== -->
+
+<div class="pergunta">
+
+    <h3>Qual ambiente de trabalho você prefere?</h3>
+
+    <button class="opcao" data-area="dev">Empresa de Software</button>
+
+    <button class="opcao" data-area="hardware">Laboratório de Hardware</button>
+
+    <button class="opcao" data-area="cloud">Data Center</button>
+
+    <button class="opcao" data-area="redes">Centro de Redes</button>
+
+</div>
+
+<!-- ====================== -->
+<!-- PERGUNTA 8 -->
+<!-- ====================== -->
+
+<div class="pergunta">
+
+    <h3>O que você faria primeiro em um computador?</h3>
+
+    <button class="opcao" data-area="hardware">Montaria o computador</button>
+
+    <button class="opcao" data-area="dev">Criaria um programa</button>
+
+    <button class="opcao" data-area="redes">Ligaria à rede</button>
+
+    <button class="opcao" data-area="seguranca">Protegeria contra ataques</button>
+
+</div>
+
+<!-- ====================== -->
+<!-- PERGUNTA 9 -->
+<!-- ====================== -->
+
+<div class="pergunta">
+
+    <h3>Qual habilidade você gostaria de desenvolver?</h3>
+
+    <button class="opcao" data-area="dados">Análise de Dados</button>
+
+    <button class="opcao" data-area="ia">Machine Learning</button>
+
+    <button class="opcao" data-area="cloud">Serviços em Nuvem</button>
+
+    <button class="opcao" data-area="dev">Desenvolvimento Web</button>
+
+</div>
+
+<!-- ====================== -->
+<!-- PERGUNTA 10 -->
+<!-- ====================== -->
+
+<div class="pergunta">
+
+    <h3>Qual dessas frases combina mais com você?</h3>
+
+    <button class="opcao" data-area="dev">
+        Gosto de criar soluções.
+    </button>
+
+    <button class="opcao" data-area="seguranca">
+        Gosto de proteger sistemas.
+    </button>
+
+    <button class="opcao" data-area="hardware">
+        Gosto de montar equipamentos.
+    </button>
+
+    <button class="opcao" data-area="dados">
+        Gosto de descobrir informações.
+    </button>
+
+</div>
+
+<!-- ====================== -->
+<!-- NAVEGAÇÃO -->
+<!-- ====================== -->
+
+<div class="navegacaoQuiz">
+
+    <button
+        class="btn-secundario"
+        id="btnAnterior">
+
+        ← Anterior
+
+    </button>
+
+    <button
+        class="btn-principal"
+        id="btnProximo">
+
+        Próxima →
+
+    </button>
+
+</div>
+
+<!-- ====================== -->
+<!-- RESULTADO -->
+<!-- ====================== -->
+
+<div id="resultadoCarreira">
+
+    <!-- O JavaScript preencherá esta área automaticamente -->
+
+</div>
+
+</div>
 
 </section>
 
