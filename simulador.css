@@ -784,3 +784,68 @@ nav a:hover{
     font-weight:700;
 
 }
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.estatisticas{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    margin:45px 0;
+
+}
+
+.card-estatistica{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.card-estatistica:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.card-estatistica span{
+
+    display:block;
+
+    font-size:2rem;
+
+    margin-bottom:12px;
+
+}
+
+.card-estatistica h4{
+
+    margin-bottom:10px;
+
+    color:var(--secondary);
+
+}
+
+.card-estatistica p{
+
+    color:var(--text2);
+
+    line-height:1.5;
+
+}
