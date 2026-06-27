@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz de Tecnologia</title>
+
+    <link rel="stylesheet" href="css/quiz.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--=====================================
+HEADER
+======================================-->
+
+<header>
+
+    <div class="logo">
+
+        <a href="index.html">
+
+            WHAY HELP
+
+        </a>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Início</a>
+
+        <a href="simulador.html">Simulador</a>
+
+    </nav>
+
+</header>
+
+<!--=====================================
+HERO
+======================================-->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+
+            🧠 QUIZ INTERATIVO
+
+        </span>
+
+        <h1>
+
+            Teste seus conhecimentos em Tecnologia da Informação
+
+        </h1>
+
+        <p>
+
+            Responda às perguntas e descubra seu nível de conhecimento em TI.
+
+        </p>
+
+        <button id="btnComecar">
+
+            Começar Quiz
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--=====================================
+QUIZ
+======================================-->
+
+<section class="quiz-area">
+
+    <div class="quiz-card">
+
+        <div class="topo-quiz">
+
+            <h2>
+
+                Quiz de TI
+
+            </h2>
+
+            <span id="contador">
+
+                1 / 10
+
+            </span>
+
+        </div>
+
+        <div class="barra">
+
+            <div id="progresso"></div>
+
+        </div>
+
+        <h3 id="pergunta">
+
+            Clique em "Começar Quiz"
+
+        </h3>
+
+        <div id="respostas">
+
+        </div>
+
+        <button id="btnProxima">
+
+            Próxima Pergunta
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--=====================================
+RESULTADO
+======================================-->
+
+<section id="resultado"
+         class="resultado">
+
+    <div class="resultado-card">
+
+        <h2>
+
+            🎉 Resultado
+
+        </h2>
+
+        <h1 id="pontuacao">
+
+            0/10
+
+        </h1>
+
+        <p id="mensagem">
+
+            ...
+
+        </p>
+
+        <button onclick="location.reload()">
+
+            Refazer Quiz
+
+        </button>
+
+        <br><br>
+
+        <a href="index.html">
+
+            ← Voltar ao site
+
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+
+        © <span id="ano"></span> WHAY HELP
+
+    </p>
+
+</footer>
+
+<script src="js/quiz.js"></script>
+
+</body>
+</html>
