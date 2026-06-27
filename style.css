@@ -66,6 +66,17 @@ body{
     --shadow:
     0 20px 45px rgba(0,0,0,.35);
 
+   --success:#3DDC97;
+   --warning:#FFC857;
+   --danger:#FF5A5F;
+
+   --glass:rgba(255,255,255,.08);
+
+   --shadow-small:0 10px 20px rgba(0,0,0,.20);
+   --shadow-medium:0 20px 40px rgba(0,0,0,.30);
+   --shadow-large:0 30px 60px rgba(0,0,0,.40);
+
+   --transition:.35s ease;
 }
 
 /* ===========================
@@ -241,6 +252,55 @@ p{
     opacity:1;
 
     transform:translateY(0);
+
+}
+.section-title{
+
+    text-align:center;
+
+    color:var(--secondary);
+
+    font-size:2.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.section-text{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+}
+
+.glass{
+
+    background:rgba(16,41,66,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.radius{
+
+    border-radius:30px;
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow-medium);
 
 }
 /* ==========================================================
@@ -1725,4 +1785,47 @@ footer p{
     line-height:1.8;
 
 }
-    
+footer hr{
+
+    width:120px;
+
+    height:2px;
+
+    margin:30px auto;
+
+    border:none;
+
+    background:rgba(255,255,255,.10);
+
+}
+
+#ano{
+
+    margin-top:20px;
+
+    color:var(--text2);
+
+    font-size:.95rem;
+
+}    
+/* ==========================================================
+   TI EM NÚMEROS
+==========================================================*/
+
+
+
+/* ==========================================================
+   EVOLUÇÃO DA CARREIRA
+==========================================================*/
+
+
+
+/* ==========================================================
+   QUIZ
+==========================================================*/
+
+
+
+/* ==========================================================
+   SIMULADOR
+==========================================================*/
