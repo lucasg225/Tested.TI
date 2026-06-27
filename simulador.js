@@ -1108,7 +1108,52 @@ ranking.slice(0,3).forEach((item,index)=>{
     `;
 
 });
-   
+const estatisticas =
+document.getElementById("estatisticas");
+
+estatisticas.innerHTML = `
+
+<div class="card-estatistica">
+
+<span>🏆</span>
+
+<h4>Ranking</h4>
+
+<p>1º Lugar</p>
+
+</div>
+
+<div class="card-estatistica">
+
+<span>📊</span>
+
+<h4>Compatibilidade</h4>
+
+<p>${porcentagem}%</p>
+
+</div>
+
+<div class="card-estatistica">
+
+<span>💼</span>
+
+<h4>Área</h4>
+
+<p>${perfil.nome}</p>
+
+</div>
+
+<div class="card-estatistica">
+
+<span>🛠️</span>
+
+<h4>Tecnologias</h4>
+
+<p>${perfil.tecnologias.length}</p>
+
+</div>
+
+`;
    const informacoes = document.getElementById("informacoes");
 
 informacoes.innerHTML = `
