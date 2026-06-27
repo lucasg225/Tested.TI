@@ -341,12 +341,9 @@ QUIZ
     background:#1d4a73;
 
 }
-
 #btnProxima{
 
-    display:none;
-
-    margin:40px auto 0;
+    display:none !important;
 
 }
 
