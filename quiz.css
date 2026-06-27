@@ -612,3 +612,20 @@ RESULTADO PREMIUM
     font-size:1.1rem;
 
 }
+.btn-simulador{
+    display:inline-block;
+    margin-top:20px;
+    padding:16px 32px;
+    border-radius:16px;
+    background:linear-gradient(90deg, var(--primary), var(--secondary));
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+    box-shadow:0 12px 30px rgba(10,132,255,.25);
+}
+
+.btn-simulador:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 35px rgba(10,132,255,.35);
+}
