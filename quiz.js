@@ -255,34 +255,70 @@ function finalizarQuiz(){
 
     pontuacao.textContent=`${pontos}/${perguntas.length}`;
 
-    if(pontos===10){
+const percentualResultado =
+Math.round((pontos/perguntas.length)*100);
 
-        mensagem.textContent=
-        "Excelente! Você domina muito bem os conceitos básicos de Tecnologia da Informação.";
+document.getElementById("barraFinal").style.width =
+percentualResultado + "%";
 
-    }
+document.getElementById("acertos").textContent =
+pontos;
 
-    else if(pontos>=8){
+document.getElementById("erros").textContent =
+perguntas.length-pontos;
 
-        mensagem.textContent=
-        "Muito bom! Você possui um ótimo conhecimento em TI.";
+document.getElementById("percentual").textContent =
+percentualResultado+"%";
 
-    }
+const medalha =
+document.getElementById("medalha");
 
-    else if(pontos>=5){
+const nivel =
+document.getElementById("nivel");
 
-        mensagem.textContent=
-        "Bom trabalho! Continue estudando para evoluir ainda mais.";
+if(percentualResultado===100){
 
-    }
+    medalha.textContent="💎";
 
-    else{
+    nivel.textContent="Diamante";
 
-        mensagem.textContent=
-        "Continue estudando. A área de TI possui muito conteúdo interessante para aprender!";
+    mensagem.textContent=
+    "Perfeito! Você demonstrou domínio dos conceitos básicos de Tecnologia da Informação.";
 
-    }
+}
 
+else if(percentualResultado>=80){
+
+    medalha.textContent="🥇";
+
+    nivel.textContent="Ouro";
+
+    mensagem.textContent=
+    "Excelente desempenho! Continue estudando e você estará preparado para muitos desafios na área de TI.";
+
+}
+
+else if(percentualResultado>=60){
+
+    medalha.textContent="🥈";
+
+    nivel.textContent="Prata";
+
+    mensagem.textContent=
+    "Bom trabalho! Você já possui uma boa base, mas ainda pode evoluir bastante.";
+
+}
+
+else{
+
+    medalha.textContent="🥉";
+
+    nivel.textContent="Bronze";
+
+    mensagem.textContent=
+    "Você está começando sua jornada. Continue aprendendo e evoluindo na área de TI.";
+
+}
 }
 function iniciarTempo(){
 
