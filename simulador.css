@@ -166,7 +166,7 @@ nav a:hover{
 
 .hero{
 
-    min-height:70vh;
+    min-height:50vh;
 
     display:flex;
 
@@ -365,7 +365,7 @@ nav a:hover{
         var(--secondary)
     );
 
-    transition:.5s;
+    transition:.8s ease;
 
 }
 
@@ -486,7 +486,7 @@ nav a:hover{
 
 .resultado-card{
 
-    width:min(950px,100%);
+    width:min(1100px,100%);
 
     margin:auto;
 
