@@ -140,6 +140,8 @@ const perguntas = [
 let indice = 0;
 let pontos = 0;
 let respostaSelecionada = null;
+let tempo = 20;
+let intervalo;
 
 const pergunta = document.getElementById("pergunta");
 const respostas = document.getElementById("respostas");
@@ -152,6 +154,9 @@ const btnProxima = document.getElementById("btnProxima");
 const resultado = document.getElementById("resultado");
 const pontuacao = document.getElementById("pontuacao");
 const mensagem = document.getElementById("mensagem");
+
+const tempoElemento = document.getElementById("tempo");
+const timer = document.querySelector(".timer");
 
 btnComecar.addEventListener("click", iniciarQuiz);
 
@@ -170,6 +175,8 @@ function iniciarQuiz(){
 
 function mostrarPergunta(){
 
+    iniciarTempo();
+   
     respostaSelecionada=null;
 
     btnProxima.style.display="none";
@@ -216,6 +223,8 @@ function selecionar(card,indiceResposta){
 
 function proximaPergunta(){
 
+    clearInterval(intervalo);
+   
     if(respostaSelecionada===null) return;
 
     if(respostaSelecionada===perguntas[indice].correta){
@@ -275,5 +284,48 @@ function finalizarQuiz(){
         "Continue estudando. A área de TI possui muito conteúdo interessante para aprender!";
 
     }
+
+}
+function iniciarTempo(){
+
+    clearInterval(intervalo);
+
+    tempo=20;
+
+    tempoElemento.textContent=tempo;
+
+    timer.classList.remove("amarelo","vermelho");
+
+    intervalo=setInterval(()=>{
+
+        tempo--;
+
+        tempoElemento.textContent=tempo;
+
+        if(tempo<=10){
+
+            timer.classList.add("amarelo");
+
+        }
+
+        if(tempo<=5){
+
+            timer.classList.remove("amarelo");
+
+            timer.classList.add("vermelho");
+
+        }
+
+        if(tempo<=0){
+
+            clearInterval(intervalo);
+
+            respostaSelecionada=-1;
+
+            proximaPergunta();
+
+        }
+
+    },1000);
 
 }
