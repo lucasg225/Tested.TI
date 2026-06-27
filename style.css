@@ -2127,14 +2127,131 @@ footer hr{
     line-height:1.8;
 
 }
+/* ===========================
+   FERRAMENTAS
+=========================== */
 
+.ferramentas{
 
-/* ==========================================================
-   QUIZ
-==========================================================*/
+    padding:90px 8%;
 
+}
 
+.ferramentas h2{
 
-/* ==========================================================
-   SIMULADOR
-==========================================================*/
+    text-align:center;
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.subtitulo{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+}
+
+.ferramentas-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.ferramenta-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s;
+
+}
+
+.ferramenta-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
+
+}
+
+.icone-ferramenta{
+
+    font-size:3.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.ferramenta-card h3{
+
+    margin-bottom:20px;
+
+    font-size:1.8rem;
+
+}
+
+.ferramenta-card p{
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.btn-ferramenta{
+
+    display:inline-block;
+
+    padding:16px 35px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-ferramenta:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(10,132,255,.35);
+
+}
+
