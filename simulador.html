@@ -3,161 +3,179 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Simulador de Carreira | WHAY HELP</title>
+    <title>Simulador de Carreira | WHAY HELP</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/simulador.css">
 
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
 </head>
 
 <body>
 
-<header class="header-apple">
+<header>
 
-    <img
-        src="https://upload.wikimedia.org/wikipedia/commons/8/82/Firjan_logo.png"
-        class="logo-firjan"
-        alt="Firjan">
+    <div class="logo">
 
-    <div class="header-center">
-
-        <h1>Simulador de Carreira</h1>
-
-        <p>Descubra qual profissão da TI combina com você.</p>
+        <a href="index.html">WHAY HELP</a>
 
     </div>
 
-    <a href="index.html" class="btn-principal">
+    <nav>
 
-        ← Voltar
+        <a href="index.html">Início</a>
 
-    </a>
+        <a href="quiz.html">Quiz</a>
+
+    </nav>
 
 </header>
 
 <section class="hero">
 
-<div class="hero-conteudo">
+    <div class="hero-content">
 
-<div class="badge">
+        <span class="tag">
 
-🚀 Teste Profissional
+            🚀 SIMULADOR DE CARREIRA
 
-</div>
+        </span>
 
-<h2>
+        <h1>
 
-Qual área da TI<br>
+            Descubra qual área da TI combina com você
 
-combina com você?
+        </h1>
 
-</h2>
+        <p>
 
-<p>
+            Responda algumas perguntas e receba um perfil personalizado.
 
-Responda apenas 10 perguntas.
+        </p>
 
-No final você descobrirá sua profissão ideal, salário médio,
-certificações, tecnologias e evolução na carreira.
+        <button id="btnComecar">
 
-</p>
+            Iniciar Simulação
 
-<div class="hero-botoes">
+        </button>
 
-<button
-id="iniciarQuiz"
-class="btn-principal">
-
-Começar Agora
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<section class="secao" id="quiz">
+<section class="simulador">
 
-<h2>Teste Vocacional</h2>
+    <div class="simulador-card">
 
-<div class="simulador-box">
+        <div class="topo">
 
-<div class="progresso">
+            <h2>Simulação</h2>
 
-<div id="barraProgresso"></div>
+            <span id="contador">
 
-</div>
+                Pergunta 1 de 8
 
-<p class="contador-pergunta">
+            </span>
 
-Pergunta
+        </div>
 
-<span id="numeroPergunta">
+        <div class="barra">
 
-1
+            <div id="progresso"></div>
 
-</span>
+        </div>
 
-de 10
+        <h3 id="pergunta">
 
-</p>
+            Clique em "Iniciar Simulação"
 
-<div id="areaPergunta">
+        </h3>
 
-<!-- JavaScript criará tudo aqui -->
+        <div id="respostas">
 
-</div>
+        </div>
 
-<div class="navegacaoQuiz">
+    </div>
 
-<button
-id="btnAnterior"
-class="btn-secundario">
+</section>
 
-← Anterior
+<section id="resultado" class="resultado">
 
-</button>
+    <div class="resultado-card">
 
-<button
-id="btnProximo"
-class="btn-principal">
+        <h2>
 
-Próxima →
+            Seu Perfil
 
-</button>
+        </h2>
 
-</div>
+        <div id="iconePerfil">
 
-<div id="resultadoCarreira"></div>
+            💻
 
-</div>
+        </div>
+
+        <h1 id="perfil">
+
+            Desenvolvedor Full Stack
+
+        </h1>
+
+        <div class="barra-final">
+
+            <div id="compatibilidade"></div>
+
+        </div>
+
+        <p id="porcentagem">
+
+            Compatibilidade: 90%
+
+        </p>
+
+        <div id="informacoes">
+
+        </div>
+
+        <button onclick="location.reload()">
+
+            Refazer Simulação
+
+        </button>
+
+        <br><br>
+
+        <a href="index.html">
+
+            ← Voltar ao Site
+
+        </a>
+
+    </div>
 
 </section>
 
 <footer>
 
-<h3>
+    <p>
 
-WHAY HELP
+        © <span id="ano"></span> WHAY HELP
 
-</h3>
-
-<p>
-
-Projeto desenvolvido para apresentar as diversas áreas da Tecnologia da Informação.
-
-</p>
+    </p>
 
 </footer>
 
-<script src="simulador.js"></script>
+<script src="js/simulador.js"></script>
 
 </body>
 
