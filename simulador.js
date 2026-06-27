@@ -1015,9 +1015,49 @@ function preencherResultado(perfil,ranking){
     document.getElementById("compatibilidade")
     .style.width = porcentagem+"%";
 
-    document.getElementById("porcentagem")
-    .textContent =
-    `Compatibilidade: ${porcentagem}%`;
+const barra =
+document.getElementById("compatibilidade");
+
+if(porcentagem >= 80){
+
+    barra.style.background =
+    "linear-gradient(90deg,#00c853,#69f0ae)";
+
+}
+
+else if(porcentagem >= 60){
+
+    barra.style.background =
+    "linear-gradient(90deg,#ffd600,#ffea00)";
+
+}
+
+else{
+
+    barra.style.background =
+    "linear-gradient(90deg,#ff5252,#ff1744)";
+
+}
+   
+    const texto =
+document.getElementById("porcentagem");
+
+let atual = 0;
+
+const animacao = setInterval(()=>{
+
+    atual++;
+
+    texto.textContent =
+    `Compatibilidade: ${atual}%`;
+
+    if(atual>=porcentagem){
+
+        clearInterval(animacao);
+
+    }
+
+},20);
    const rankingTop3 =
 document.getElementById("rankingTop3");
 
@@ -1031,6 +1071,10 @@ ranking.slice(0,3).forEach((item,index)=>{
 
     const area = perfis[chave];
 
+    const porcentagemArea =
+    Math.round((pontos / perguntas.length / 3) * 100);
+
+    const medalhas=["🥇","🥈","🥉"];
     const medalhas=["🥇","🥈","🥉"];
 
     rankingTop3.innerHTML += `
@@ -1055,7 +1099,7 @@ ranking.slice(0,3).forEach((item,index)=>{
 
             <span class="ranking-pontos">
 
-                ${pontos} pts
+                ${porcentagemArea}%
 
             </span>
 
