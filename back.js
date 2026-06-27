@@ -254,5 +254,35 @@ function animarContadores() {
 
     }
 }
+function selecionar(card,indiceResposta){
 
+    clearInterval(intervalo);
+
+    document.querySelectorAll(".resposta").forEach((resposta,index)=>{
+
+        resposta.classList.add("desabilitada");
+
+        if(index===perguntas[indice].correta){
+
+            resposta.classList.add("correta");
+
+        }
+
+    });
+
+    if(indiceResposta!==perguntas[indice].correta){
+
+        card.classList.add("errada");
+
+    }
+
+    respostaSelecionada=indiceResposta;
+
+    setTimeout(()=>{
+
+        proximaPergunta();
+
+    },1200);
+
+}
 console.log("Projeto TI V5 carregado com sucesso.");
