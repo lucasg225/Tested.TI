@@ -1018,7 +1018,54 @@ function preencherResultado(perfil,ranking){
     document.getElementById("porcentagem")
     .textContent =
     `Compatibilidade: ${porcentagem}%`;
-    const informacoes = document.getElementById("informacoes");
+   const rankingTop3 =
+document.getElementById("rankingTop3");
+
+rankingTop3.innerHTML="";
+
+ranking.slice(0,3).forEach((item,index)=>{
+
+    const chave = item[0];
+
+    const pontos = item[1];
+
+    const area = perfis[chave];
+
+    const medalhas=["🥇","🥈","🥉"];
+
+    rankingTop3.innerHTML += `
+
+        <div class="ranking-card">
+
+            <div class="ranking-esquerda">
+
+                <span class="ranking-posicao">
+
+                    ${medalhas[index]}
+
+                </span>
+
+                <span class="ranking-nome">
+
+                    ${area.icone} ${area.nome}
+
+                </span>
+
+            </div>
+
+            <span class="ranking-pontos">
+
+                ${pontos} pts
+
+            </span>
+
+        </div>
+
+    `;
+
+});
+   
+   const informacoes = document.getElementById("informacoes");
 
 informacoes.innerHTML = `
 
