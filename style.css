@@ -2254,4 +2254,42 @@ footer hr{
     box-shadow:0 15px 35px rgba(10,132,255,.35);
 
 }
+.menu h3{
+    margin: 24px 0 12px;
+    color: var(--text2);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
+.fundamentos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.fundamento-card{
+    padding: 28px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(20,46,73,.95), rgba(8,22,35,.98));
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+    transition: .35s;
+}
+
+.fundamento-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(10,132,255,.22);
+}
+
+.fundamento-card h3{
+    color: var(--secondary);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.fundamento-card p{
+    color: var(--text2);
+    line-height: 1.8;
+   }
