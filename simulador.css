@@ -713,3 +713,74 @@ nav a:hover{
     }
 
 }
+/* ===========================
+   TOP 3
+=========================== */
+
+#rankingTop3{
+
+    display:grid;
+
+    gap:18px;
+
+    margin-bottom:45px;
+
+}
+
+.ranking-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.ranking-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.ranking-esquerda{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.ranking-posicao{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+.ranking-nome{
+
+    font-weight:600;
+
+}
+
+.ranking-pontos{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+}
