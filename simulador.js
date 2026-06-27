@@ -1,34 +1,43 @@
 /* ==========================================================
-   SIMULADOR DE CARREIRA
-   WHAY HELP
+   SIMULADOR DE CARREIRA - WHAY HELP
 ==========================================================*/
 
-/* ==========================================
+/* ==========================================================
+   VARIÁVEIS
+==========================================================*/
+
+let indice = 0;
+
+const pontuacoes = {
+    dev: 0,
+    seguranca: 0,
+    cloud: 0,
+    dados: 0,
+    redes: 0,
+    ia: 0,
+    design: 0,
+    suporte: 0
+};
+
+/* ==========================================================
    PERFIS PROFISSIONAIS
-==========================================*/
+==========================================================*/
 
 const perfis = {
 
-    dev:{
+    dev: {
 
-        icone:"💻",
+        icone: "💻",
+        nome: "Desenvolvedor Full Stack",
 
-        nome:"Desenvolvedor Full Stack",
-
-        salario:{
-
-            estagio:"R$ 1.500 a R$ 2.500",
-
-            junior:"R$ 4.500 a R$ 6.500",
-
-            pleno:"R$ 7.500 a R$ 10.000",
-
-            senior:"R$ 12.000 a R$ 18.000+"
-
+        salario: {
+            estagio: "R$ 1.500 a R$ 2.500",
+            junior: "R$ 4.500 a R$ 6.500",
+            pleno: "R$ 7.500 a R$ 10.000",
+            senior: "R$ 12.000 a R$ 18.000+"
         },
 
-        tecnologias:[
-
+        tecnologias: [
             "HTML",
             "CSS",
             "JavaScript",
@@ -36,896 +45,624 @@ const perfis = {
             "Node.js",
             "Git",
             "SQL"
-
         ],
 
-        certificacoes:[
-
+        certificacoes: [
             "AWS Cloud Practitioner",
             "Microsoft AZ-900",
             "Oracle Java"
-
         ],
 
-        empresas:[
-
+        empresas: [
             "Google",
             "Microsoft",
             "Nubank",
             "TOTVS",
             "iFood"
-
         ],
 
-        passos:[
-
+        passos: [
             "Estudar lógica de programação",
-            "Aprender HTML e CSS",
+            "Aprender HTML",
+            "Aprender CSS",
             "Dominar JavaScript",
             "Aprender React",
-            "Estudar Node.js",
-            "Banco de Dados",
-            "Criar projetos para portfólio"
-
+            "Aprender Node.js",
+            "Criar um portfólio"
         ],
 
-        caracteristicas:[
-
+        caracteristicas: [
             "Criativo",
             "Analítico",
             "Persistente",
-            "Gosta de resolver problemas"
-
+            "Resolve problemas"
         ]
-
     },
 
-    seguranca:{
+    seguranca: {
 
-        icone:"🔐",
+        icone: "🔐",
+        nome: "Especialista em Cibersegurança",
 
-        nome:"Especialista em Cibersegurança",
-
-        salario:{
-
-            estagio:"R$ 1.600 a R$ 2.500",
-
-            junior:"R$ 5.000 a R$ 7.000",
-
-            pleno:"R$ 8.000 a R$ 12.000",
-
-            senior:"R$ 15.000+"
-
+        salario: {
+            estagio: "R$ 1.600 a R$ 2.500",
+            junior: "R$ 5.000 a R$ 7.000",
+            pleno: "R$ 8.000 a R$ 12.000",
+            senior: "R$ 15.000+"
         },
 
-        tecnologias:[
-
+        tecnologias: [
             "Linux",
             "Python",
-            "Kali Linux",
             "Wireshark",
+            "Kali Linux",
             "Metasploit"
-
         ],
 
-        certificacoes:[
-
+        certificacoes: [
             "Security+",
             "CEH",
-            "CompTIA"
-
+            "CompTIA Security+"
         ],
 
-        empresas:[
-
-            "Banco do Brasil",
+        empresas: [
             "IBM",
             "Cisco",
+            "Banco do Brasil",
             "Accenture"
-
         ],
 
-        passos:[
-
+        passos: [
             "Aprender Redes",
-            "Aprender Linux",
+            "Dominar Linux",
             "Estudar Segurança",
             "Pentest",
             "Cloud Security"
-
         ],
 
-        caracteristicas:[
-
+        caracteristicas: [
             "Observador",
             "Paciente",
             "Analítico",
             "Responsável"
-
         ]
-
     },
 
+    cloud: {
 
-cloud:{
+        icone: "☁️",
+        nome: "Engenheiro de Cloud",
 
-    icone:"☁️",
+        salario: {
+            estagio: "R$ 1.800 a R$ 2.800",
+            junior: "R$ 5.500 a R$ 8.000",
+            pleno: "R$ 9.000 a R$ 13.000",
+            senior: "R$ 15.000 a R$ 22.000+"
+        },
 
-    nome:"Engenheiro de Cloud",
+        tecnologias: [
+            "AWS",
+            "Azure",
+            "Google Cloud",
+            "Docker",
+            "Kubernetes"
+        ],
 
-    salario:{
+        certificacoes: [
+            "AWS Cloud Practitioner",
+            "AWS Solutions Architect",
+            "Microsoft AZ-104"
+        ],
 
-        estagio:"R$ 1.800 a R$ 2.800",
+        empresas: [
+            "Amazon",
+            "Microsoft",
+            "Google",
+            "IBM"
+        ],
 
-        junior:"R$ 5.500 a R$ 8.000",
+        passos: [
+            "Aprender Redes",
+            "Linux",
+            "Virtualização",
+            "Docker",
+            "Cloud"
+        ],
 
-        pleno:"R$ 9.000 a R$ 13.000",
-
-        senior:"R$ 15.000 a R$ 22.000+"
-
+        caracteristicas: [
+            "Organizado",
+            "Analítico",
+            "Curioso",
+            "Proativo"
+        ]
     },
 
-    tecnologias:[
+        dados: {
 
-        "AWS",
-        "Azure",
-        "Google Cloud",
-        "Docker",
-        "Kubernetes"
+        icone: "📊",
+        nome: "Cientista de Dados",
 
-    ],
+        salario: {
+            estagio: "R$ 1.700 a R$ 2.500",
+            junior: "R$ 5.000 a R$ 7.500",
+            pleno: "R$ 8.000 a R$ 12.000",
+            senior: "R$ 15.000+"
+        },
 
-    certificacoes:[
+        tecnologias: [
+            "Python",
+            "SQL",
+            "Power BI",
+            "Pandas",
+            "Excel"
+        ],
 
-        "AWS Cloud Practitioner",
-        "AWS Solutions Architect",
-        "Microsoft AZ-104"
+        certificacoes: [
+            "Google Data Analytics",
+            "Microsoft DP-900"
+        ],
 
-    ],
+        empresas: [
+            "Google",
+            "Nubank",
+            "Mercado Livre"
+        ],
 
-    empresas:[
+        passos: [
+            "Estudar Estatística",
+            "Aprender Python",
+            "Dominar SQL",
+            "Machine Learning"
+        ],
 
-        "Amazon",
-        "Microsoft",
-        "Google",
-        "IBM"
-
-    ],
-
-    passos:[
-
-        "Aprender Redes",
-        "Linux",
-        "Virtualização",
-        "Docker",
-        "Cloud"
-
-    ],
-
-    caracteristicas:[
-
-        "Organizado",
-        "Analítico",
-        "Curioso",
-        "Proativo"
-
-    ]
-
-},
-dados:{
-
-    icone:"📊",
-
-    nome:"Cientista de Dados",
-
-    salario:{
-
-        estagio:"R$ 1.700 a R$ 2.500",
-
-        junior:"R$ 5.000 a R$ 7.500",
-
-        pleno:"R$ 8.000 a R$ 12.000",
-
-        senior:"R$ 15.000+"
-
+        caracteristicas: [
+            "Lógico",
+            "Analítico",
+            "Paciente",
+            "Detalhista"
+        ]
     },
 
-    tecnologias:[
+    redes: {
 
-        "Python",
-        "SQL",
-        "Power BI",
-        "Pandas",
-        "Excel"
+        icone: "🌐",
+        nome: "Administrador de Redes",
 
-    ],
+        salario: {
+            estagio: "R$ 1.500 a R$ 2.200",
+            junior: "R$ 4.000 a R$ 6.000",
+            pleno: "R$ 7.000 a R$ 9.000",
+            senior: "R$ 12.000+"
+        },
 
-    certificacoes:[
+        tecnologias: [
+            "Cisco",
+            "Linux",
+            "TCP/IP",
+            "Firewall"
+        ],
 
-        "Google Data Analytics",
-        "Microsoft DP-900"
+        certificacoes: [
+            "CCNA",
+            "Network+"
+        ],
 
-    ],
+        empresas: [
+            "Cisco",
+            "Claro",
+            "Vivo"
+        ],
 
-    empresas:[
+        passos: [
+            "Aprender Redes",
+            "Linux",
+            "Roteadores",
+            "Segurança"
+        ],
 
-        "Nubank",
-        "Mercado Livre",
-        "Google"
-
-    ],
-
-    passos:[
-
-        "Estudar Estatística",
-        "Python",
-        "SQL",
-        "Machine Learning"
-
-    ],
-
-    caracteristicas:[
-
-        "Lógico",
-        "Analítico",
-        "Paciente",
-        "Detalhista"
-
-    ]
-
-},
-redes:{
-
-    icone:"🌐",
-
-    nome:"Administrador de Redes",
-
-    salario:{
-
-        estagio:"R$ 1.500 a R$ 2.200",
-
-        junior:"R$ 4.000 a R$ 6.000",
-
-        pleno:"R$ 7.000 a R$ 9.000",
-
-        senior:"R$ 12.000+"
-
+        caracteristicas: [
+            "Paciente",
+            "Organizado",
+            "Responsável"
+        ]
     },
 
-    tecnologias:[
+    ia: {
 
-        "Cisco",
-        "Linux",
-        "TCP/IP",
-        "Firewall"
+        icone: "🤖",
+        nome: "Engenheiro de Inteligência Artificial",
 
-    ],
+        salario: {
+            estagio: "R$ 2.000",
+            junior: "R$ 6.000 a R$ 8.500",
+            pleno: "R$ 10.000 a R$ 15.000",
+            senior: "R$ 18.000+"
+        },
 
-    certificacoes:[
+        tecnologias: [
+            "Python",
+            "TensorFlow",
+            "PyTorch",
+            "Machine Learning"
+        ],
 
-        "CCNA",
+        certificacoes: [
+            "Google AI",
+            "Azure AI"
+        ],
 
-        "Network+"
+        empresas: [
+            "OpenAI",
+            "Google",
+            "Meta"
+        ],
 
-    ],
+        passos: [
+            "Aprender Python",
+            "Matemática",
+            "Machine Learning",
+            "Deep Learning"
+        ],
 
-    empresas:[
-
-        "Cisco",
-
-        "Claro",
-
-        "Vivo"
-
-    ],
-
-    passos:[
-
-        "Redes",
-
-        "Linux",
-
-        "Roteadores",
-
-        "Segurança"
-
-    ],
-
-    caracteristicas:[
-
-        "Paciente",
-
-        "Organizado",
-
-        "Responsável"
-
-    ]
-
-},
-ia:{
-
-    icone:"🤖",
-
-    nome:"Engenheiro de Inteligência Artificial",
-
-    salario:{
-
-        estagio:"R$ 2.000",
-
-        junior:"R$ 6.000 a R$ 8.500",
-
-        pleno:"R$ 10.000 a R$ 15.000",
-
-        senior:"R$ 18.000+"
-
+        caracteristicas: [
+            "Muito analítico",
+            "Curioso",
+            "Criativo"
+        ]
     },
 
-    tecnologias:[
+    design: {
 
-        "Python",
+        icone: "🎨",
+        nome: "UX/UI Designer",
 
-        "TensorFlow",
+        salario: {
+            estagio: "R$ 1.500",
+            junior: "R$ 4.000",
+            pleno: "R$ 7.000",
+            senior: "R$ 12.000+"
+        },
 
-        "PyTorch",
+        tecnologias: [
+            "Figma",
+            "Adobe XD",
+            "Photoshop"
+        ],
 
-        "Machine Learning"
+        certificacoes: [
+            "Google UX Design"
+        ],
 
-    ],
+        empresas: [
+            "Nubank",
+            "iFood",
+            "PicPay"
+        ],
 
-    certificacoes:[
+        passos: [
+            "UX",
+            "UI",
+            "Figma",
+            "Prototipação"
+        ],
 
-        "Google AI",
-
-        "Azure AI"
-
-    ],
-
-    empresas:[
-
-        "OpenAI",
-
-        "Google",
-
-        "Meta"
-
-    ],
-
-    passos:[
-
-        "Python",
-
-        "Matemática",
-
-        "Machine Learning",
-
-        "Deep Learning"
-
-    ],
-
-    caracteristicas:[
-
-        "Muito analítico",
-
-        "Curioso",
-
-        "Criativo"
-
-    ]
-
-},
-design:{
-
-    icone:"🎨",
-
-    nome:"UX/UI Designer",
-
-    salario:{
-
-        estagio:"R$ 1.500",
-
-        junior:"R$ 4.000",
-
-        pleno:"R$ 7.000",
-
-        senior:"R$ 12.000+"
-
+        caracteristicas: [
+            "Criativo",
+            "Empático",
+            "Observador"
+        ]
     },
 
-    tecnologias:[
+    suporte: {
 
-        "Figma",
+        icone: "🛠️",
+        nome: "Analista de Suporte",
 
-        "Adobe XD",
+        salario: {
+            estagio: "R$ 1.300",
+            junior: "R$ 3.500",
+            pleno: "R$ 5.500",
+            senior: "R$ 8.500+"
+        },
 
-        "Photoshop"
+        tecnologias: [
+            "Windows",
+            "Linux",
+            "Office",
+            "Hardware"
+        ],
 
-    ],
+        certificacoes: [
+            "ITIL",
+            "CompTIA A+"
+        ],
 
-    certificacoes:[
+        empresas: [
+            "TOTVS",
+            "Dell",
+            "Positivo"
+        ],
 
-        "Google UX Design"
+        passos: [
+            "Hardware",
+            "Redes",
+            "Windows",
+            "Linux"
+        ],
 
-    ],
+        caracteristicas: [
+            "Comunicativo",
+            "Paciente",
+            "Prestativo"
+        ]
+    }
 
-    empresas:[
-
-        "Nubank",
-
-        "iFood",
-
-        "PicPay"
-
-    ],
-
-    passos:[
-
-        "UX",
-
-        "UI",
-
-        "Figma",
-
-        "Prototipação"
-
-    ],
-
-    caracteristicas:[
-
-        "Criativo",
-
-        "Empático",
-
-        "Observador"
-
-    ]
-
-},
-suporte:{
-
-    icone:"🛠️",
-
-    nome:"Analista de Suporte",
-
-    salario:{
-
-        estagio:"R$ 1.300",
-
-        junior:"R$ 3.500",
-
-        pleno:"R$ 5.500",
-
-        senior:"R$ 8.500+"
-
-    },
-
-    tecnologias:[
-
-        "Windows",
-
-        "Linux",
-
-        "Office",
-
-        "Hardware"
-
-    ],
-
-    certificacoes:[
-
-        "ITIL",
-
-        "CompTIA A+"
-
-    ],
-
-    empresas:[
-
-        "TOTVS",
-
-        "Dell",
-
-        "Positivo"
-
-    ],
-
-    passos:[
-
-        "Hardware",
-
-        "Redes",
-
-        "Windows",
-
-        "Linux"
-
-    ],
-
-    caracteristicas:[
-
-        "Comunicativo",
-
-        "Paciente",
-
-        "Prestativo"
-
-    ]
-}
 };
-/* ==========================================
+};
+/* ==========================================================
    PERGUNTAS
-==========================================*/
+==========================================================*/
 
 const perguntas = [
 
 {
-    pergunta:"O que mais desperta seu interesse na tecnologia?",
+    pergunta: "O que mais desperta seu interesse na tecnologia?",
 
-    respostas:[
+    respostas: [
 
         {
-            texto:"💻 Criar sites e aplicativos",
-
-            pontos:{dev:3, design:1}
+            texto: "💻 Criar sites e aplicativos",
+            pontos: { dev: 3, design: 1 }
         },
 
         {
-            texto:"🔐 Proteger sistemas contra ataques",
-
-            pontos:{seguranca:3, redes:1}
+            texto: "🔐 Proteger sistemas contra ataques",
+            pontos: { seguranca: 3, redes: 1 }
         },
 
         {
-            texto:"📊 Trabalhar com dados e gráficos",
-
-            pontos:{dados:3, ia:1}
+            texto: "📊 Trabalhar com dados",
+            pontos: { dados: 3, ia: 1 }
         },
 
         {
-            texto:"☁️ Criar servidores e serviços em nuvem",
-
-            pontos:{cloud:3, redes:1}
+            texto: "☁️ Trabalhar com servidores e nuvem",
+            pontos: { cloud: 3, redes: 1 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Qual atividade você mais gosta?",
+    pergunta: "Qual atividade você prefere?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Resolver problemas complexos",
-
-            pontos:{dev:2, seguranca:2, ia:2}
-
+            texto: "Resolver problemas",
+            pontos: { dev: 2, seguranca: 2, ia: 2 }
         },
 
         {
-
-            texto:"Ajudar pessoas",
-
-            pontos:{suporte:3}
-
+            texto: "Ajudar pessoas",
+            pontos: { suporte: 3 }
         },
 
         {
-
-            texto:"Criar interfaces bonitas",
-
-            pontos:{design:3}
-
+            texto: "Criar interfaces bonitas",
+            pontos: { design: 3 }
         },
 
         {
-
-            texto:"Organizar informações",
-
-            pontos:{dados:2, cloud:2}
-
+            texto: "Organizar informações",
+            pontos: { dados: 2, cloud: 2 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Qual matéria você prefere?",
+    pergunta: "Qual matéria você mais gosta?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Matemática",
-
-            pontos:{ia:3, dados:2}
-
+            texto: "Matemática",
+            pontos: { ia: 3, dados: 2 }
         },
 
         {
-
-            texto:"Informática",
-
-            pontos:{dev:3}
-
+            texto: "Informática",
+            pontos: { dev: 3 }
         },
 
         {
-
-            texto:"Artes",
-
-            pontos:{design:3}
-
+            texto: "Artes",
+            pontos: { design: 3 }
         },
 
         {
-
-            texto:"Física",
-
-            pontos:{cloud:2, redes:2}
-
+            texto: "Física",
+            pontos: { cloud: 2, redes: 2 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Como você prefere trabalhar?",
+    pergunta: "Como você prefere trabalhar?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Criando soluções",
-
-            pontos:{dev:2, design:2}
-
+            texto: "Criando soluções",
+            pontos: { dev: 2, design: 2 }
         },
 
         {
-
-            texto:"Investigando problemas",
-
-            pontos:{seguranca:3}
-
+            texto: "Investigando problemas",
+            pontos: { seguranca: 3 }
         },
 
         {
-
-            texto:"Analisando dados",
-
-            pontos:{dados:3}
-
+            texto: "Analisando dados",
+            pontos: { dados: 3 }
         },
 
         {
-
-            texto:"Configurando equipamentos",
-
-            pontos:{redes:3, suporte:2}
-
+            texto: "Configurando equipamentos",
+            pontos: { redes: 3, suporte: 2 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Qual ferramenta gostaria de aprender primeiro?",
+    pergunta: "Qual ferramenta gostaria de aprender primeiro?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Visual Studio Code",
-
-            pontos:{dev:3}
-
+            texto: "Visual Studio Code",
+            pontos: { dev: 3 }
         },
 
         {
-
-            texto:"Figma",
-
-            pontos:{design:3}
-
+            texto: "Figma",
+            pontos: { design: 3 }
         },
 
         {
-
-            texto:"Power BI",
-
-            pontos:{dados:3}
-
+            texto: "Power BI",
+            pontos: { dados: 3 }
         },
 
         {
-
-            texto:"Cisco Packet Tracer",
-
-            pontos:{redes:3}
-
+            texto: "Cisco Packet Tracer",
+            pontos: { redes: 3 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Qual ambiente parece mais interessante?",
+    pergunta: "Qual ambiente parece mais interessante?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Startup",
-
-            pontos:{dev:2, design:2}
-
+            texto: "Startup",
+            pontos: { dev: 2, design: 2 }
         },
 
         {
-
-            texto:"Centro de operações",
-
-            pontos:{seguranca:3}
-
+            texto: "Centro de Operações",
+            pontos: { seguranca: 3 }
         },
 
         {
-
-            texto:"Laboratório de IA",
-
-            pontos:{ia:3}
-
+            texto: "Laboratório de IA",
+            pontos: { ia: 3 }
         },
 
         {
-
-            texto:"Data Center",
-
-            pontos:{cloud:3}
-
+            texto: "Data Center",
+            pontos: { cloud: 3 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Você gosta de programação?",
+    pergunta: "Você gosta de programação?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Muito",
-
-            pontos:{dev:3, ia:2, cloud:1}
-
+            texto: "Muito",
+            pontos: { dev: 3, ia: 2, cloud: 1 }
         },
 
         {
-
-            texto:"Um pouco",
-
-            pontos:{dados:2}
-
+            texto: "Um pouco",
+            pontos: { dados: 2 }
         },
 
         {
-
-            texto:"Prefiro infraestrutura",
-
-            pontos:{redes:2, suporte:2}
-
+            texto: "Prefiro infraestrutura",
+            pontos: { redes: 2, suporte: 2 }
         },
 
         {
-
-            texto:"Prefiro design",
-
-            pontos:{design:3}
-
+            texto: "Prefiro design",
+            pontos: { design: 3 }
         }
 
     ]
-
 },
 
 {
-    pergunta:"Qual profissão chamou mais sua atenção até agora?",
+    pergunta: "Qual profissão mais chamou sua atenção?",
 
-    respostas:[
+    respostas: [
 
         {
-
-            texto:"Desenvolvedor",
-
-            pontos:{dev:3}
-
+            texto: "Desenvolvedor",
+            pontos: { dev: 3 }
         },
 
         {
-
-            texto:"Especialista em Segurança",
-
-            pontos:{seguranca:3}
-
+            texto: "Especialista em Segurança",
+            pontos: { seguranca: 3 }
         },
 
         {
-
-            texto:"Engenheiro de Cloud",
-
-            pontos:{cloud:3}
-
+            texto: "Engenheiro de Cloud",
+            pontos: { cloud: 3 }
         },
 
         {
-
-            texto:"Cientista de Dados",
-
-            pontos:{dados:3}
-
+            texto: "Cientista de Dados",
+            pontos: { dados: 3 }
         }
 
     ]
-
 }
 
 ];
-/* ==========================================
-   VARIÁVEIS
-==========================================*/
 
-let indice = 0;
-
-let pontuacoes = {
-
-    dev:0,
-
-    seguranca:0,
-
-    cloud:0,
-
-    dados:0,
-
-    redes:0,
-
-    ia:0,
-
-    design:0,
-
-    suporte:0
-
-};
+/* ==========================================================
+   ELEMENTOS DA PÁGINA
+==========================================================*/
 
 const btnComecar = document.getElementById("btnComecar");
-
 const pergunta = document.getElementById("pergunta");
-
 const respostas = document.getElementById("respostas");
-
 const contador = document.getElementById("contador");
-
 const progresso = document.getElementById("progresso");
-
 const resultado = document.getElementById("resultado");
 
 document.getElementById("ano").textContent =
 new Date().getFullYear();
 
-btnComecar.addEventListener("click",()=>{
+/* ==========================================================
+   INICIAR
+==========================================================*/
 
-    btnComecar.style.display="none";
+btnComecar.addEventListener("click", iniciarSimulador);
+
+function iniciarSimulador(){
+
+    btnComecar.style.display = "none";
 
     mostrarPergunta();
 
-});
+}
+
+/* ==========================================================
+   PERGUNTAS
+==========================================================*/
+
 function mostrarPergunta(){
 
     const atual = perguntas[indice];
@@ -933,148 +670,154 @@ function mostrarPergunta(){
     pergunta.textContent = atual.pergunta;
 
     contador.textContent =
-    `Pergunta ${indice+1} de ${perguntas.length}`;
+    `Pergunta ${indice + 1} de ${perguntas.length}`;
 
     progresso.style.width =
-    ((indice+1)/perguntas.length)*100 + "%";
+    ((indice + 1) / perguntas.length) * 100 + "%";
 
-    respostas.innerHTML="";
+    respostas.innerHTML = "";
 
-    atual.respostas.forEach(resposta=>{
+    atual.respostas.forEach(resposta => {
 
         const botao = document.createElement("button");
 
-        botao.className="opcao";
+        botao.className = "opcao";
 
         botao.textContent = resposta.texto;
 
-        botao.onclick=()=>responder(resposta);
+        botao.onclick = () => responder(resposta);
 
         respostas.appendChild(botao);
 
     });
 
 }
+
+/* ==========================================================
+   RESPOSTAS
+==========================================================*/
+
 function responder(resposta){
 
     for(const area in resposta.pontos){
 
-        pontuacoes[area]+=resposta.pontos[area];
+        pontuacoes[area] += resposta.pontos[area];
 
     }
 
     indice++;
 
-    if(indice<perguntas.length){
+    if(indice < perguntas.length){
 
         mostrarPergunta();
 
-    }
-
-    else{
+    }else{
 
         gerarResultado();
 
     }
-
 }
-function gerarResultado(){
+/* ==========================================================
+   RESULTADO
+==========================================================*/
 
-    document.querySelector(".simulador").style.display="none";
+function gerarResultado() {
 
-    resultado.style.display="block";
+    document.querySelector(".simulador").style.display = "none";
+    resultado.style.display = "block";
 
-    const ranking =
-    Object.entries(pontuacoes)
-
-    .sort((a,b)=>b[1]-a[1]);
+    const ranking = Object.entries(pontuacoes)
+        .sort((a, b) => b[1] - a[1]);
 
     const vencedor = ranking[0][0];
 
-    preencherResultado(perfis[vencedor],ranking);
-
-}
-function preencherResultado(perfil,ranking){
-
-    document.getElementById("iconePerfil").textContent =
-    perfil.icone;
-
-    document.getElementById("perfil").textContent =
-    perfil.nome;
-
-    const maior = ranking[0][1];
-
-    const pontuacaoMaxima =
-   perguntas.length * 3;
-
-   const porcentagem =
-   Math.round((maior/pontuacaoMaxima)*100);
-
-    document.getElementById("compatibilidade")
-    .style.width = porcentagem+"%";
-
-const barra =
-document.getElementById("compatibilidade");
-
-if(porcentagem >= 80){
-
-    barra.style.background =
-    "linear-gradient(90deg,#00c853,#69f0ae)";
+    preencherResultado(perfis[vencedor], ranking);
 
 }
 
-else if(porcentagem >= 60){
+/* ==========================================================
+   PREENCHER RESULTADO
+==========================================================*/
 
-    barra.style.background =
-    "linear-gradient(90deg,#ffd600,#ffea00)";
+function preencherResultado(perfil, ranking) {
 
-}
+    document.getElementById("iconePerfil").textContent = perfil.icone;
+    document.getElementById("perfil").textContent = perfil.nome;
 
-else{
+    const maiorPontuacao = ranking[0][1];
+    const pontuacaoMaxima = perguntas.length * 3;
 
-    barra.style.background =
-    "linear-gradient(90deg,#ff5252,#ff1744)";
+    const porcentagem =
+        Math.round((maiorPontuacao / pontuacaoMaxima) * 100);
 
-}
-   
-    const texto =
-document.getElementById("porcentagem");
+    const barra = document.getElementById("compatibilidade");
 
-let atual = 0;
+    barra.style.width = porcentagem + "%";
 
-const animacao = setInterval(()=>{
+    if (porcentagem >= 80) {
 
-    atual++;
+        barra.style.background =
+            "linear-gradient(90deg,#00c853,#69f0ae)";
 
-    texto.textContent =
-    `Compatibilidade: ${atual}%`;
+    } else if (porcentagem >= 60) {
 
-    if(atual>=porcentagem){
+        barra.style.background =
+            "linear-gradient(90deg,#ffd600,#ffea00)";
 
-        clearInterval(animacao);
+    } else {
 
+        barra.style.background =
+            "linear-gradient(90deg,#ff5252,#ff1744)";
     }
 
-},20);
-   const rankingTop3 =
-document.getElementById("rankingTop3");
+    const texto = document.getElementById("porcentagem");
 
-rankingTop3.innerHTML="";
+    let atual = 0;
 
-ranking.slice(0,3).forEach((item,index)=>{
+    const animacao = setInterval(() => {
 
-    const chave = item[0];
+        atual++;
 
-    const pontos = item[1];
+        texto.textContent =
+            `Compatibilidade: ${atual}%`;
 
-    const area = perfis[chave];
+        if (atual >= porcentagem) {
 
-    const porcentagemArea =
-    Math.round((pontos / perguntas.length / 3) * 100);
+            clearInterval(animacao);
 
-    const medalhas=["🥇","🥈","🥉"];
-    
-    rankingTop3.innerHTML += `
+        }
+
+    }, 20);
+
+    preencherRanking(ranking);
+
+    preencherEstatisticas(perfil, porcentagem);
+
+    preencherInformacoes(perfil);
+
+}
+
+/* ==========================================================
+   RANKING
+==========================================================*/
+
+function preencherRanking(ranking) {
+
+    const rankingTop3 =
+        document.getElementById("rankingTop3");
+
+    rankingTop3.innerHTML = "";
+
+    const medalhas = ["🥇", "🥈", "🥉"];
+
+    ranking.slice(0, 3).forEach((item, index) => {
+
+        const perfil = perfis[item[0]];
+
+        const porcentagem =
+            Math.round((item[1] / (perguntas.length * 3)) * 100);
+
+        rankingTop3.innerHTML += `
 
         <div class="ranking-card">
 
@@ -1088,7 +831,7 @@ ranking.slice(0,3).forEach((item,index)=>{
 
                 <span class="ranking-nome">
 
-                    ${area.icone} ${area.nome}
+                    ${perfil.icone} ${perfil.nome}
 
                 </span>
 
@@ -1096,19 +839,25 @@ ranking.slice(0,3).forEach((item,index)=>{
 
             <span class="ranking-pontos">
 
-                ${porcentagemArea}%
+                ${porcentagem}%
 
             </span>
 
         </div>
 
-    `;
+        `;
 
-});
-const estatisticas =
-document.getElementById("estatisticas");
+    });
 
-estatisticas.innerHTML = `
+}
+
+/* ==========================================================
+   ESTATÍSTICAS
+==========================================================*/
+
+function preencherEstatisticas(perfil, porcentagem) {
+
+    document.getElementById("estatisticas").innerHTML = `
 
 <div class="card-estatistica">
 
@@ -1151,63 +900,56 @@ estatisticas.innerHTML = `
 </div>
 
 `;
-   const informacoes = document.getElementById("informacoes");
 
-informacoes.innerHTML = `
+}
+
+/* ==========================================================
+   INFORMAÇÕES
+==========================================================*/
+
+function preencherInformacoes(perfil) {
+
+    document.getElementById("informacoes").innerHTML = `
 
 <h3>💰 Faixa Salarial</h3>
 
 <ul class="lista">
-
 <li><strong>Estágio:</strong> ${perfil.salario.estagio}</li>
-
 <li><strong>Júnior:</strong> ${perfil.salario.junior}</li>
-
 <li><strong>Pleno:</strong> ${perfil.salario.pleno}</li>
-
 <li><strong>Sênior:</strong> ${perfil.salario.senior}</li>
-
 </ul>
 
 <h3>🛠 Tecnologias</h3>
 
 <ul class="lista">
-
-${perfil.tecnologias.map(item=>`<li>${item}</li>`).join("")}
-
+${perfil.tecnologias.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>📚 Certificações</h3>
 
 <ul class="lista">
-
-${perfil.certificacoes.map(item=>`<li>${item}</li>`).join("")}
-
+${perfil.certificacoes.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>🏢 Empresas</h3>
 
 <ul class="lista">
-
-${perfil.empresas.map(item=>`<li>${item}</li>`).join("")}
-
+${perfil.empresas.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>🎯 Próximos Passos</h3>
 
 <ul class="lista">
-
-${perfil.passos.map(item=>`<li>${item}</li>`).join("")}
-
+${perfil.passos.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>⭐ Perfil Profissional</h3>
 
 <ul class="lista">
-
-${perfil.caracteristicas.map(item=>`<li>${item}</li>`).join("")}
-
+${perfil.caracteristicas.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 `;
+
 }
