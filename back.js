@@ -190,7 +190,7 @@ if (ano) {
 
 }
 
-console.log("Projeto TI V5 carregado com sucesso.");
+
 /* ==========================================
    SCROLL PRINCIPAL
 ========================================== */
@@ -201,8 +201,58 @@ window.addEventListener("scroll", () => {
 
     controlarBotaoTopo();
 
-    atualizarHeader();
-
-    controlarHeaderInteligente();
+    animarContadores();
 
 });
+/* ===========================
+   TI EM NÚMEROS
+=========================== */
+
+const contadores = document.querySelectorAll(".contador");
+
+let contadoresAnimados = false;
+
+function animarContadores() {
+
+    if (contadoresAnimados) return;
+
+    const secao = document.querySelector(".ti-numeros");
+
+    if (!secao) return;
+
+    const topo = secao.getBoundingClientRect().top;
+
+    if (topo < window.innerHeight * 0.8) {
+
+        contadoresAnimados = true;
+
+        contadores.forEach(contador => {
+
+            const alvo = Number(contador.dataset.target);
+
+            let valor = 0;
+
+            const incremento = Math.max(1, Math.ceil(alvo / 100));
+
+            const intervalo = setInterval(() => {
+
+                valor += incremento;
+
+                if (valor >= alvo) {
+
+                    valor = alvo;
+
+                    clearInterval(intervalo);
+
+                }
+
+                contador.textContent = valor.toLocaleString("pt-BR");
+
+            }, 20);
+
+        });
+
+    }
+}
+
+console.log("Projeto TI V5 carregado com sucesso.");
