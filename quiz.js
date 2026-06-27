@@ -179,8 +179,6 @@ function mostrarPergunta(){
    
     respostaSelecionada=null;
 
-    btnProxima.style.display="none";
-
     const atual=perguntas[indice];
 
     pergunta.textContent=atual.pergunta;
