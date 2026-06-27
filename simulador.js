@@ -146,7 +146,7 @@ const perfis = {
 
     }
 
-},
+
 cloud:{
 
     icone:"☁️",
@@ -1004,13 +1004,11 @@ function preencherResultado(perfil,ranking){
 
     const maior = ranking[0][1];
 
-    const total =
-    Object.values(pontuacoes)
+    const pontuacaoMaxima =
+   perguntas.length * 3;
 
-    .reduce((a,b)=>a+b);
-
-    const porcentagem =
-    Math.round((maior/total)*100);
+   const porcentagem =
+   Math.round((maior/pontuacaoMaxima)*100);
 
     document.getElementById("compatibilidade")
     .style.width = porcentagem+"%";
@@ -1075,8 +1073,7 @@ ranking.slice(0,3).forEach((item,index)=>{
     Math.round((pontos / perguntas.length / 3) * 100);
 
     const medalhas=["🥇","🥈","🥉"];
-    const medalhas=["🥇","🥈","🥉"];
-
+    
     rankingTop3.innerHTML += `
 
         <div class="ranking-card">
