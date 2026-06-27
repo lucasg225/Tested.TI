@@ -1018,5 +1018,63 @@ function preencherResultado(perfil,ranking){
     document.getElementById("porcentagem")
     .textContent =
     `Compatibilidade: ${porcentagem}%`;
+    const informacoes = document.getElementById("informacoes");
 
+informacoes.innerHTML = `
+
+<h3>💰 Faixa Salarial</h3>
+
+<ul class="lista">
+
+<li><strong>Estágio:</strong> ${perfil.salario.estagio}</li>
+
+<li><strong>Júnior:</strong> ${perfil.salario.junior}</li>
+
+<li><strong>Pleno:</strong> ${perfil.salario.pleno}</li>
+
+<li><strong>Sênior:</strong> ${perfil.salario.senior}</li>
+
+</ul>
+
+<h3>🛠 Tecnologias</h3>
+
+<ul class="lista">
+
+${perfil.tecnologias.map(item=>`<li>${item}</li>`).join("")}
+
+</ul>
+
+<h3>📚 Certificações</h3>
+
+<ul class="lista">
+
+${perfil.certificacoes.map(item=>`<li>${item}</li>`).join("")}
+
+</ul>
+
+<h3>🏢 Empresas</h3>
+
+<ul class="lista">
+
+${perfil.empresas.map(item=>`<li>${item}</li>`).join("")}
+
+</ul>
+
+<h3>🎯 Próximos Passos</h3>
+
+<ul class="lista">
+
+${perfil.passos.map(item=>`<li>${item}</li>`).join("")}
+
+</ul>
+
+<h3>⭐ Perfil Profissional</h3>
+
+<ul class="lista">
+
+${perfil.caracteristicas.map(item=>`<li>${item}</li>`).join("")}
+
+</ul>
+
+`;
 }
