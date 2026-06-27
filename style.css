@@ -358,7 +358,19 @@ p{
     background:rgba(12,28,44,.82);
 
 }
+.header-scroll{
 
+    background:rgba(5,18,32,.92);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+.header-hide{
+
+    transform:translate(-50%,-140%);
+
+}
 /* ===========================
    LOGO
 =========================== */
