@@ -101,23 +101,21 @@ window.addEventListener("load", controlarBotaoTopo);
 
 const header = document.querySelector(".header-apple");
 
-window.addEventListener("scroll", () => {
+function atualizarHeader(){
 
-    if (!header) return;
+    if(!header) return;
 
-    if (window.scrollY > 60) {
+    if(window.scrollY > 60){
 
-        header.style.background = "rgba(5,18,32,.90)";
-        header.style.boxShadow = "0 20px 45px rgba(0,0,0,.45)";
+        header.classList.add("header-scroll");
 
-    } else {
+    }else{
 
-        header.style.background = "rgba(8,22,35,.72)";
-        header.style.boxShadow = "0 20px 40px rgba(0,0,0,.35)";
+        header.classList.remove("header-scroll");
 
     }
 
-});
+}
 
 /* ===========================
    EFEITO NOS CARDS
@@ -177,29 +175,31 @@ console.log("Projeto TI V5 carregado com sucesso.");
 
 let ultimoScroll = 0;
 
-window.addEventListener("scroll", () => {
+function controlarHeaderInteligente(){
 
-    if (!header) return;
+    if(!header) return;
 
-    const atual = window.scrollY;
+    const atual = window.pageYOffset;
 
-    if (atual > ultimoScroll && atual > 100) {
+    if(atual > ultimoScroll && atual > 120){
 
-        header.style.transform = "translate(-50%, -140%)";
+        header.classList.add("header-hide");
 
-    } else {
+    }else{
 
-        header.style.transform = "translate(-50%, 0)";
+        header.classList.remove("header-hide");
 
     }
 
     ultimoScroll = atual;
 
-});
+}
         }
 
     }
-
+/*========================
+      Carreiras
+========================*/
     const carreiras = {
 
         dev:{
@@ -266,5 +266,18 @@ window.addEventListener("scroll", () => {
         }
 
     };
+/* ==========================================
+   SCROLL PRINCIPAL
+========================================== */
 
-   
+window.addEventListener("scroll", () => {
+
+    revelarElementos();
+
+    controlarBotaoTopo();
+
+    atualizarHeader();
+
+    controlarHeaderInteligente();
+
+});
