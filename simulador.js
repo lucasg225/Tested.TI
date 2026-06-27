@@ -551,3 +551,472 @@ suporte:{
     ]
 
 }
+/* ==========================================
+   PERGUNTAS
+==========================================*/
+
+const perguntas = [
+
+{
+    pergunta:"O que mais desperta seu interesse na tecnologia?",
+
+    respostas:[
+
+        {
+            texto:"💻 Criar sites e aplicativos",
+
+            pontos:{dev:3, design:1}
+        },
+
+        {
+            texto:"🔐 Proteger sistemas contra ataques",
+
+            pontos:{seguranca:3, redes:1}
+        },
+
+        {
+            texto:"📊 Trabalhar com dados e gráficos",
+
+            pontos:{dados:3, ia:1}
+        },
+
+        {
+            texto:"☁️ Criar servidores e serviços em nuvem",
+
+            pontos:{cloud:3, redes:1}
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Qual atividade você mais gosta?",
+
+    respostas:[
+
+        {
+
+            texto:"Resolver problemas complexos",
+
+            pontos:{dev:2, seguranca:2, ia:2}
+
+        },
+
+        {
+
+            texto:"Ajudar pessoas",
+
+            pontos:{suporte:3}
+
+        },
+
+        {
+
+            texto:"Criar interfaces bonitas",
+
+            pontos:{design:3}
+
+        },
+
+        {
+
+            texto:"Organizar informações",
+
+            pontos:{dados:2, cloud:2}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Qual matéria você prefere?",
+
+    respostas:[
+
+        {
+
+            texto:"Matemática",
+
+            pontos:{ia:3, dados:2}
+
+        },
+
+        {
+
+            texto:"Informática",
+
+            pontos:{dev:3}
+
+        },
+
+        {
+
+            texto:"Artes",
+
+            pontos:{design:3}
+
+        },
+
+        {
+
+            texto:"Física",
+
+            pontos:{cloud:2, redes:2}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Como você prefere trabalhar?",
+
+    respostas:[
+
+        {
+
+            texto:"Criando soluções",
+
+            pontos:{dev:2, design:2}
+
+        },
+
+        {
+
+            texto:"Investigando problemas",
+
+            pontos:{seguranca:3}
+
+        },
+
+        {
+
+            texto:"Analisando dados",
+
+            pontos:{dados:3}
+
+        },
+
+        {
+
+            texto:"Configurando equipamentos",
+
+            pontos:{redes:3, suporte:2}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Qual ferramenta gostaria de aprender primeiro?",
+
+    respostas:[
+
+        {
+
+            texto:"Visual Studio Code",
+
+            pontos:{dev:3}
+
+        },
+
+        {
+
+            texto:"Figma",
+
+            pontos:{design:3}
+
+        },
+
+        {
+
+            texto:"Power BI",
+
+            pontos:{dados:3}
+
+        },
+
+        {
+
+            texto:"Cisco Packet Tracer",
+
+            pontos:{redes:3}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Qual ambiente parece mais interessante?",
+
+    respostas:[
+
+        {
+
+            texto:"Startup",
+
+            pontos:{dev:2, design:2}
+
+        },
+
+        {
+
+            texto:"Centro de operações",
+
+            pontos:{seguranca:3}
+
+        },
+
+        {
+
+            texto:"Laboratório de IA",
+
+            pontos:{ia:3}
+
+        },
+
+        {
+
+            texto:"Data Center",
+
+            pontos:{cloud:3}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Você gosta de programação?",
+
+    respostas:[
+
+        {
+
+            texto:"Muito",
+
+            pontos:{dev:3, ia:2, cloud:1}
+
+        },
+
+        {
+
+            texto:"Um pouco",
+
+            pontos:{dados:2}
+
+        },
+
+        {
+
+            texto:"Prefiro infraestrutura",
+
+            pontos:{redes:2, suporte:2}
+
+        },
+
+        {
+
+            texto:"Prefiro design",
+
+            pontos:{design:3}
+
+        }
+
+    ]
+
+},
+
+{
+    pergunta:"Qual profissão chamou mais sua atenção até agora?",
+
+    respostas:[
+
+        {
+
+            texto:"Desenvolvedor",
+
+            pontos:{dev:3}
+
+        },
+
+        {
+
+            texto:"Especialista em Segurança",
+
+            pontos:{seguranca:3}
+
+        },
+
+        {
+
+            texto:"Engenheiro de Cloud",
+
+            pontos:{cloud:3}
+
+        },
+
+        {
+
+            texto:"Cientista de Dados",
+
+            pontos:{dados:3}
+
+        }
+
+    ]
+
+}
+
+];
+/* ==========================================
+   VARIÁVEIS
+==========================================*/
+
+let indice = 0;
+
+let pontuacoes = {
+
+    dev:0,
+
+    seguranca:0,
+
+    cloud:0,
+
+    dados:0,
+
+    redes:0,
+
+    ia:0,
+
+    design:0,
+
+    suporte:0
+
+};
+
+const btnComecar = document.getElementById("btnComecar");
+
+const pergunta = document.getElementById("pergunta");
+
+const respostas = document.getElementById("respostas");
+
+const contador = document.getElementById("contador");
+
+const progresso = document.getElementById("progresso");
+
+const resultado = document.getElementById("resultado");
+
+document.getElementById("ano").textContent =
+new Date().getFullYear();
+
+btnComecar.addEventListener("click",()=>{
+
+    btnComecar.style.display="none";
+
+    mostrarPergunta();
+
+});
+function mostrarPergunta(){
+
+    const atual = perguntas[indice];
+
+    pergunta.textContent = atual.pergunta;
+
+    contador.textContent =
+    `Pergunta ${indice+1} de ${perguntas.length}`;
+
+    progresso.style.width =
+    ((indice+1)/perguntas.length)*100 + "%";
+
+    respostas.innerHTML="";
+
+    atual.respostas.forEach(resposta=>{
+
+        const botao = document.createElement("button");
+
+        botao.className="opcao";
+
+        botao.textContent = resposta.texto;
+
+        botao.onclick=()=>responder(resposta);
+
+        respostas.appendChild(botao);
+
+    });
+
+}
+function responder(resposta){
+
+    for(const area in resposta.pontos){
+
+        pontuacoes[area]+=resposta.pontos[area];
+
+    }
+
+    indice++;
+
+    if(indice<perguntas.length){
+
+        mostrarPergunta();
+
+    }
+
+    else{
+
+        gerarResultado();
+
+    }
+
+}
+function gerarResultado(){
+
+    document.querySelector(".simulador").style.display="none";
+
+    resultado.style.display="block";
+
+    const ranking =
+    Object.entries(pontuacoes)
+
+    .sort((a,b)=>b[1]-a[1]);
+
+    const vencedor = ranking[0][0];
+
+    preencherResultado(perfis[vencedor],ranking);
+
+}
+function preencherResultado(perfil,ranking){
+
+    document.getElementById("iconePerfil").textContent =
+    perfil.icone;
+
+    document.getElementById("perfil").textContent =
+    perfil.nome;
+
+    const maior = ranking[0][1];
+
+    const total =
+    Object.values(pontuacoes)
+
+    .reduce((a,b)=>a+b);
+
+    const porcentagem =
+    Math.round((maior/total)*100);
+
+    document.getElementById("compatibilidade")
+    .style.width = porcentagem+"%";
+
+    document.getElementById("porcentagem")
+    .textContent =
+    `Compatibilidade: ${porcentagem}%`;
+
+}
