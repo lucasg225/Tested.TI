@@ -2285,3 +2285,152 @@ footer hr{
     color: var(--text2);
     line-height: 1.8;
 }
+/* ===============================
+Arrumar pagina inical no celular
+=============================== */
+html, body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #050d17;
+}
+
+@media (max-width: 768px){
+
+    .header-apple{
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: none;
+        border-radius: 0 0 22px 22px;
+        padding: 16px 14px;
+    }
+
+    .header-center h1{
+        font-size: 1.15rem;
+    }
+
+    .header-center p{
+        font-size: .85rem;
+    }
+
+    .hero{
+        padding: 130px 16px 70px;
+        background-attachment: scroll;
+    }
+
+    .hero h2{
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .hero p{
+        font-size: .98rem;
+    }
+
+    .secao,
+    .ti-numeros,
+    .carreira,
+    .ferramentas,
+    .podcast,
+    .canva{
+        width: calc(100% - 18px);
+        margin: 55px auto;
+        padding: 28px 16px;
+    }
+
+    .secao h2,
+    .ti-numeros h2,
+    .carreira h2,
+    .ferramentas h2,
+    .podcast h2{
+        font-size: 1.85rem;
+    }
+
+    .cards-grid,
+    .areas-grid,
+    .mercado,
+    .numeros-grid,
+    .ferramentas-grid{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .timeline{
+        padding-left: 26px;
+        margin-top: 40px;
+    }
+
+    .timeline::before{
+        left: 8px;
+    }
+
+    .timeline-dot{
+        left: -28px;
+    }
+
+    .timeline-card{
+        padding: 22px;
+    }
+
+    .numero-card h3{
+        font-size: 2.4rem;
+    }
+
+    .ferramenta-card{
+        padding: 26px 20px;
+    }
+
+    .btn-ferramenta,
+    .btn-principal,
+    .btn-secundario{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .menu{
+        width: 100vw;
+        max-width: 100vw;
+        right: -100%;
+        left: auto;
+        padding: 18px 14px;
+    }
+
+    .menu.ativo{
+        right: 0;
+    }
+
+    .menu-links a{
+        text-align: left;
+        font-size: .95rem;
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .hero h2{
+        font-size: 1.7rem;
+    }
+
+    .hero-botoes{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-botoes a{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .card img{
+        height: 180px;
+    }
+
+    .area-card,
+    .mercado-item,
+    .fundamento-card,
+    .ferramenta-card{
+        border-radius: 20px;
+    }
+}
