@@ -116,30 +116,36 @@ function atualizarHeader(){
     }
 
     }
-/*============================
+/* ===========================
    HEADER INTELIGENTE
 =========================== */
+
+const header = document.querySelector(".header-apple");
+
 let ultimoScroll = 0;
 
-function controlarHeaderInteligente(){
-
-    if(!header) return;
+window.addEventListener("scroll", () => {
 
     const atual = window.pageYOffset;
 
-    if(atual > ultimoScroll && atual > 120){
-
-        header.classList.add("header-hide");
-
-    }else{
-
+    if (atual <= 10) {
         header.classList.remove("header-hide");
+        ultimoScroll = atual;
+        return;
+    }
 
+    if (atual > ultimoScroll) {
+        // Descendo
+        header.classList.add("header-hide");
+    } else {
+        // Subindo
+        header.classList.remove("header-hide");
     }
 
     ultimoScroll = atual;
 
-}
+});
+
 /* ===========================
    EFEITO NOS CARDS
 =========================== */
