@@ -474,7 +474,7 @@ p{
     height: 100vh;
     background: #071826;
     padding: 24px 20px;
-    box-shadow: 10px 0 35px rgba(0,0,0,.45);
+    box-shadow: -10px 0 35px rgba(0,0,0,.45);
     transition: left .35s ease;
     z-index: 99999;
 
@@ -484,7 +484,8 @@ p{
 }
 
 .menu.ativo{
-    left: 0;
+    right: 0:
+   left: auto;
 }
 
 .menu-topo{
