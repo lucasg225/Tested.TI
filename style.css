@@ -490,13 +490,14 @@ p{
 .menu{
     position: fixed;
     top: 0;
-    left: -100%;
+    right: -100%;
+    left: auto;
     width: min(420px, 92vw);
     height: 100vh;
     background: #071826;
     padding: 24px 20px;
     box-shadow: -10px 0 35px rgba(0,0,0,.45);
-    transition: left .35s ease;
+    transition: right .35s ease;
     z-index: 99999;
 
     display: flex;
@@ -505,8 +506,8 @@ p{
 }
 
 .menu.ativo{
-    right: 0:
-   left: auto;
+    right: 0;
+    left: auto;
 }
 
 .menu-topo{
@@ -2154,9 +2155,17 @@ footer hr{
 =========================== */
 
 .ferramentas{
+    width:min(1250px,92%);
+    margin:100px auto;
+    padding:70px 60px;
 
-    padding:90px 8%;
+    background:rgba(16,41,66,.78);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
 .ferramentas h2{
