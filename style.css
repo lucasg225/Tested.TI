@@ -2254,6 +2254,7 @@ footer hr{
     box-shadow:0 15px 35px rgba(10,132,255,.35);
 
 }
+
 .menu h3{
     margin: 24px 0 12px;
     color: var(--text2);
@@ -2292,4 +2293,4 @@ footer hr{
 .fundamento-card p{
     color: var(--text2);
     line-height: 1.8;
-   }
+}
