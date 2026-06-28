@@ -371,6 +371,27 @@ p{
     transform:translate(-50%,-140%);
 
 }
+.header-apple{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 999;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+}
+
+.header-hide{
+    transform: translateY(-100%);
+}
+
+.header-show{
+    transform: translateY(0);
+}
 /* ===========================
    LOGO
 =========================== */
