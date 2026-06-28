@@ -1436,6 +1436,14 @@ height:200px;
     }
 
 }
+@media (max-width: 900px){
+    .header-apple{
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 18px;
+    }
+}
 /* ==========================================================
    PROJETO TI V5
    STYLE.CSS
