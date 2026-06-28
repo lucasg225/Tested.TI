@@ -99,52 +99,36 @@ window.addEventListener("load", controlarBotaoTopo);
    HEADER
 =========================== */
 
-const header = document.querySelector(".header-apple");
 
-function atualizarHeader(){
 
-    if(!header) return;
-
-    if(window.scrollY > 60){
-
-        header.classList.add("header-scroll");
-
-    }else{
-
-        header.classList.remove("header-scroll");
-
-    }
-
-    }
 /* ===========================
    HEADER INTELIGENTE
 =========================== */
-
 const header = document.querySelector(".header-apple");
-
 let ultimoScroll = 0;
 
-window.addEventListener("scroll", () => {
+function controlarHeader() {
+    if (!header) return;
 
-    const atual = window.pageYOffset;
+    const atual = window.scrollY || window.pageYOffset;
 
-    if (atual <= 10) {
-        header.classList.remove("header-hide");
-        ultimoScroll = atual;
-        return;
+    if (atual > 60) {
+        header.classList.add("header-scroll");
+    } else {
+        header.classList.remove("header-scroll");
     }
 
-    if (atual > ultimoScroll) {
-        // Descendo
+    if (atual > ultimoScroll && atual > 120) {
         header.classList.add("header-hide");
     } else {
-        // Subindo
         header.classList.remove("header-hide");
     }
 
     ultimoScroll = atual;
+}
 
-});
+window.addEventListener("scroll", controlarHeader);
+window.addEventListener("load", controlarHeader);
 
 /* ===========================
    EFEITO NOS CARDS
